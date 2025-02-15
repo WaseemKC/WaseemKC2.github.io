@@ -1,0 +1,287 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutismExplorers - En stimulerande digital miljö</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5em 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+        .section {
+            margin-bottom: 2em;
+            padding: 1em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .settings {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+        .settings button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .settings button:hover {
+            background-color: #45a049;
+        }
+        .quiz {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .quiz-question {
+            margin-bottom: 1em;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+        }
+        .quiz-options label {
+            margin: 0.5em 0;
+            cursor: pointer;
+        }
+        .quiz-options input[type="radio"] {
+            margin-right: 0.5em;
+        }
+        .quiz-actions button {
+            margin-top: 1em;
+        }
+        .emotion-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .emotion-card {
+            background-color: #e0f7fa;
+            padding: 1em;
+            border-radius: 8px;
+            text-align: center;
+            width: calc(33% - 1em);
+        }
+        .social-stories {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .story-card {
+            background-color: #fff3cd;
+            padding: 1em;
+            border-radius: 8px;
+        }
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+        }
+        .game-card {
+            background-color: #cce5ff;
+            padding: 1em;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AutismExplorers</h1>
+        <p>En stimulerande och inkluderande digital miljö för personer med autism</p>
+    </header>
+
+    <nav>
+        <a href="#tests">Testa dig själv</a>
+        <a href="#emotions">Kännslor</a>
+        <a href="#stories">Sociala berättelser</a>
+        <a href="#games">Spela</a>
+        <a href="#resources">Resurser</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Settings -->
+        <div class="settings">
+            <label for="textSize">Textstorlek:</label>
+            <input type="range" id="textSize" min="1" max="3" value="1" step="0.1">
+            <button onclick="toggleSound()">Ljud: På/Av</button>
+        </div>
+
+        <!-- Tests -->
+        <section id="tests" class="section">
+            <h2>Testa dig själv</h2>
+            <p>Utforska dina styrkor, utmaningar och känslor genom dessa interaktiva tester.</p>
+            <div class="quiz">
+                <h3>Vad är mina största styrkor?</h3>
+                <div class="quiz-question">
+                    <p>Vilken aktivitet tycker du om mest?</p>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="problem-solving"> Problemlösning</label>
+                        <label><input type="radio" name="q1" value="creativity"> Kreativitet</label>
+                        <label><input type="radio" name="q1" value="details"> Att fokusera på detaljer</label>
+                    </div>
+                </div>
+                <div class="quiz-actions">
+                    <button onclick="submitQuiz()">Visa resultat</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emotions Tools -->
+        <section id="emotions" class="section">
+            <h2>Kännslor</h2>
+            <p>Verktyg och resurser för att uttrycka och tolka känslor.</p>
+            <div class="emotion-tools">
+                <div class="emotion-card">
+                    <h3>Glad</h3>
+                    <img src="happy.png" alt="Glad emoji" style="width: 50px;">
+                </div>
+                <div class="emotion-card">
+                    <h3>Sorgsen</h3>
+                    <img src="sad.png" alt="Sorgsen emoji" style="width: 50px;">
+                </div>
+                <div class="emotion-card">
+                    <h3>Frustrerad</h3>
+                    <img src="angry.png" alt="Frustrerad emoji" style="width: 50px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Stories -->
+        <section id="stories" class="section">
+            <h2>Sociala berättelser</h2>
+            <p>Läs eller utforska interaktiva berättelser om vardagliga situationer.</p>
+            <div class="social-stories">
+                <div class="story-card">
+                    <h3>Hur handlar man i en butik?</h3>
+                    <p>En guide för att navigera sociala regler i en butik.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Hur säger man hej till en ny vän?</h3>
+                    <p>En berättelse om hur man bygger nya vänner.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games -->
+        <section id="games" class="section">
+            <h2>Spela</h2>
+            <p>Engagerande spel som tränar olika färdigheter.</p>
+            <div class="games">
+                <div class="game-card" onclick="startGame('memory-match')">
+                    <h3>Memory Match</h3>
+                    <p>Matcha par av bilder och ljud.</p>
+                </div>
+                <div class="game-card" onclick="startGame('puzzle-adventure')">
+                    <h3>Puzzle Adventure</h3>
+                    <p>Bygg puzzles och upptäck nya världar.</p>
+                </div>
+                <div class="game-card" onclick="startGame('story-builder')">
+                    <h3>Story Builder</h3>
+                    <p>Skapa egna berättelser med karaktärer och scener.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources" class="section">
+            <h2>Resurser</h2>
+            <p>Hitta mer information och verktyg för att stödja din resa.</p>
+            <ul>
+                <li><a href="#">Autismforskning och vetenskap</a></li>
+                <li><a href="#">Tips för föräldrar och vårdare</a></li>
+                <li><a href="#">Handledningar för lärare</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script>
+        function toggleSound() {
+            const sound = document.querySelector('audio');
+            if (sound) {
+                sound.muted = !sound.muted;
+            }
+        }
+
+        function submitQuiz() {
+            alert("Ditt resultat visas här baserat på dina svar!");
+        }
+
+        function startGame(gameName) {
+            alert(`Startar spelet: ${gameName}`);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
